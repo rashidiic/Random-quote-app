@@ -1,0 +1,110 @@
+body {
+    background-color: #192337;
+    color: #fff;
+}
+
+.section-one {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    margin: auto;
+
+    .main-box {
+        max-width: 600px;
+        width: 90%;
+        // background-color: #28395b;
+        padding: 30px;
+        border-radius: 15px;
+        margin: auto;
+        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #heading, #description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    #output-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        max-height: none;
+        min-height: 100px;
+        overflow: visible;
+        height: auto;
+        overflow-y: auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 80%;
+        max-width: 400px;
+        border: 2px solid #3468d0;
+        border-radius: 15px;
+        text-align: center;
+        background-color: darken(#28395b, 10%);
+        padding: 20px;
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    #btn-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        #button {
+            background-color: #28395b;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            transition: 0.2s ease-in-out;
+            width: 70%;
+            max-width: 200px;
+
+            &:hover {
+                background-color: #22417e;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// Медиа-запросы для адаптивности
+@media (max-width: 768px) {
+    .main-box {
+        padding: 20px;
+    }
+
+    #output-box {
+        width: 90%;
+    }
+
+    #button {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-box {
+        padding: 15px;
+    }
+
+    #output-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #button {
+        width: 100%;    
+        padding: 10px;
+    }
+}
