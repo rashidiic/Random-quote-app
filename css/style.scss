@@ -1,0 +1,206 @@
+$white: #fff;
+$lightgreen: #1cbe8e;
+$bgcolor: #0e1c25;
+$headercolor: #192c37;
+$black: #0e1c25;
+$gray: #a0a0a0;
+$lightblue: #2196f3;
+
+body {
+    background-color: #192337;
+    color: #fff;
+    ::selection {
+        background-color: #2a4885;
+        color: #fff;
+    }
+}
+
+.section-one {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // min-height: 100vh;
+    text-align: center;
+    margin: auto;
+
+    .main-box {
+        max-width: 600px;
+        width: 90%;
+        padding: 30px;
+        border-radius: 15px;
+        margin: auto;
+
+        .heading {
+            margin-top: 2rem;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-top: 1rem;
+            input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #aeaeae;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            &::before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+            }
+        }
+
+        input:checked + .slider {
+            background-color: #28395b;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196f3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+            &::before {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    #heading,
+    #description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    #output-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        max-height: none;
+        min-height: 100px;
+        overflow: visible;
+        height: auto;
+        overflow-y: auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 80%;
+        max-width: 400px;
+        border: 2px solid #3468d0;
+        border-radius: 15px;
+        text-align: center;
+        background-color: darken(#28395b, 10%);
+        padding: 20px;
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+        }
+    }
+
+    #btn-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        #button {
+            background-color: #28395b;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            transition: 0.2s ease-in-out;
+            width: 70%;
+            max-width: 200px;
+
+            &:hover {
+                background-color: #22417e;
+                transform: scale(1.1);
+            }
+        }
+    }
+    #btn-box-2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+        a {
+            text-decoration: none;
+            #button2 {
+                background-color: #28395b;
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+                padding: 12px 25px;
+                transition: 0.2s ease-in-out;
+                width: 100%;
+                max-width: 400px;
+
+                &:hover {
+                    background-color: #22417e;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+// Медиа-запросы для адаптивности
+@media (max-width: 768px) {
+    .main-box {
+        padding: 20px;
+    }
+
+    #output-box {
+        width: 90%;
+    }
+
+    #button {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-box {
+        padding: 15px;
+    }
+
+    #output-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #button {
+        width: 100%;
+        padding: 10px;
+    }
+}
